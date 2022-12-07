@@ -11,7 +11,8 @@ To install this package the user should open up to their terminal and navigate t
 Next the user must use a pip installation of the program
 > pip install AMC-OWMVG
 
-Once the terminal has confirmed installation, the user must run the main script in the terminal.
-> python run.py
+Once the terminal has confirmed installation, the user must make a python file and fill it with the following code. Then they execute their python file using either a terminal or IDE. 
+>    import AMCowmvg as AMC
+>    AMC.runApp()
 
 This will produce a few lines of response including a website link, the user should copy and paste this into their browser.

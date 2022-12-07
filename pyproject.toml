@@ -1,5 +1,5 @@
 [project]
-name = "AMC-OWMV"
+name = "AMCowmvg"
 version = "1.0.0"
 description = "Produce Antimony Files and Graphs using a browser GUI"
 authors = [{ name = "Olivia Walsh", email = "owalsh@uw.edu" }, { name = "Matthew Van Ginneken", email = "mattcvang@gmail.com" }]
@@ -11,7 +11,7 @@ dependencies = [
     "tellurium",
     "flask",
     "wtforms",
-    "matplotlib.pyplot",
+    "matplotlib",
 ]
 
 [project.urls]
