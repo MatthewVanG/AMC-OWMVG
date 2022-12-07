@@ -1,0 +1,32 @@
+#pyproject.toml
+
+[build-system]
+requires = ["setuptools>=61.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+name = "AMC-OWMV"
+version = "1.0.0"
+description = "Produce Antimony Files and Graphs using a browser GUI"
+readme = "README.md"
+authors = [{ name = "Olivia Walsh", email = "owalsh@uw.edu" }, { name = "Matthew Van Ginneken", email = "mattcvang@gmail.com" }]
+license = { file = "LICENSE" }
+
+classifiers = [
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+]
+
+dependencies = [
+    "tellurium",
+    "flask",
+    "wtforms",
+    "matplotlib.pyplot",
+]
+requires-python = ">=3.9"
+
+[project.urls]
+Homepage = "https://github.com/MatthewVanG/BIOEN-537-Python-"
+
+[project.scripts]
+realpython = "reader.__main__:main"
