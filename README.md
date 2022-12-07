@@ -12,6 +12,6 @@ Next the user must use a pip installation of the program
 > pip install AMC-OWMVG
 
 Once the terminal has confirmed installation, the user must run the main script in the terminal.
-> python __main__.py
+> python run.py
 
 This will produce a few lines of response including a website link, the user should copy and paste this into their browser.
