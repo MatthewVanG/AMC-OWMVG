@@ -1,0 +1,4 @@
+include AMCowmvg/static/*.txt
+include AMCowmvg/static/*.jpg
+include AMCowmvg/templates/*.html
+include AMCowmvg/*.py

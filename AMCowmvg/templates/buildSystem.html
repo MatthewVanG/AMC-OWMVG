@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+
+        <style>
+    
+            /* Set additional styling options for the columns */
+            .column {
+            float: left;
+            }
+        
+            /* Set width length for the left, right and middle columns */
+            .left {
+            width: 20%;
+            }
+        
+            .middle {
+            width: 30%;
+            }
+            
+            .right {
+            width: 50%;
+            }
+        
+            .row:after {
+            content: "";
+            display: table;
+            clear: both;
+            }
+            </style>
+    </head>
+    <body>
+
+        
+        <div style="background-color:#FFA005">
+            <h1>Environment</h1>
+            <div>
+                Welcome to the Tellurium Model Builder. Here you can input reactions one at a time in order to build a Computational Biology Mass Action Model.
+
+            </div> 
+            <div class="addReaction">
+                <form method="POST" action=""> 
+                    {{ form.hidden_tag() }}
+                    <h4>Add a reaction to your model</h4>
+                    
+                    Reactant and Product names should be entered as a comma separated list of strings. i.e : A,B,C <br>
+                    If none of the Reactant or Products are fixed enter "None" into the field <br>
+                    Starting Concentrations should be entereed as a comma separated list of floats. i.e : 0.45,1.34,5 <br>
+                    The reaction constant should be entered as a single float unless the reaction is reversible in which case <br>
+                    enter the reaction constants as 2 floats separated by a comma i.e : 0.23 or 0.23,0.12 <br>
+                    If your reaction is reversible check the Reversible box <br> <br>
+                    <div class="form">
+                        {{ form.reactNames.label }}
+                        {{ form.reactNames }}
+                        <br>
+                        {{ form.startingReactConcs.label }}
+                        {{ form.startingReactConcs }}
+                        <br>
+                        {{ form.fixedReactConc.label }}
+                        {{ form.fixedReactConc }}
+                        <br>
+                        {{ form.productNames.label }}
+                        {{ form.productNames }}
+                        <br>
+                        {{ form.startingProductConcs.label }}
+                        {{ form.startingProductConcs }}
+                        <br>
+                        {{ form.fixedProductConc.label }}
+                        {{ form.fixedProductConc }}
+                        <br>
+                        {{ form.reactionConstant.label }}
+                        {{ form.reactionConstant }}
+                        <br>
+                        {{ form.reversible.label }}
+                        {{ form.reversible }}
+                        <br> <br>
+                        Press "Add Reaction" when you have finished inputing your data for the reaction <br>
+                        {{ form.submit }}
+                    </div>
+                </form>
+                <br>
+                Press "Run Simulation" when you have added all your reactions to the model
+                <form method="POST" action="">
+                    {{ form2.hidden_tag() }}
+                    <div class="form">
+                        {{ form2.submit2 }}
+                    </div>
+                </form>
+                <br>
+                If you need to reset the model press "Reset Model" which will delete all reactions currently stored in the model
+                <form method="POST" action="">
+                    {{ form3.hidden_tag() }}
+                    <div class="form">
+                        {{ form3.submit3 }}
+                    </div>
+                </form>
+
+                <form method="POST" action="" enctype="multipart/form-data">
+                    {{ form4.hidden_tag() }}
+                    <div class="form">
+                        {{ form4.model.label }}
+                        {{ form4.model }}
+                        {{ form4.submit4 }}
+                        {% if form4.model.errors %}
+                            {% for error in form4.model.errors %}
+                            <span>{{ error }}</span><br>
+                            {% endfor %}
+                        {% endif %}
+                    </div>
+                </form>
+
+                <form method="POST" action="">
+                    {{ form5.hidden_tag() }}
+                    <div class="form">
+                        {{ form5.model.label }}
+                        {{ form5.model }}
+                        {{ form5.submit5 }}
+                    </div>
+                </form>
+            </div>
+        </div>
+        
+
+        <script>
+
+            function addReactionPopUp() {
+                var att = document.createAttribute("class"); //create a class attribute
+                att.value = "selectclass"; //define the created class attribute as the class titled "selectclass"
+                imgc.setAttributeNode(att); //apply the class to the correct image
+            }
+
+        </script>
+    </body>
+</html>
